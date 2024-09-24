@@ -7,6 +7,10 @@ import aluno from '../img/Aluno.png';
 import { useState } from 'react'
 import { useEffect } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
+import React from 'react';
+
 
 
 function Cadastro() {
@@ -30,7 +34,9 @@ const [dia, mes, ano] = dateString.split('/');
 const data_atual=`${ano}-${mes}-${dia}`
 
 
-  
+const navigate = useNavigate();
+
+
 
     function irParaQuizProfessor() {
         if (emailProfessor == '' || emailProfessor == null || emailProfessor == undefined) {
@@ -38,7 +44,14 @@ const data_atual=`${ano}-${mes}-${dia}`
             setTextoErro('preencha este campo primeiro')
         }//VERIFICAR SE O EMAIL EXISTE E PEGAR A DATA ATUAL PRA MANDAR NO CADASTRO
         else {
-
+            try {
+                navigate('/Login');           
+                
+            } catch (error) {
+                console.log(error);
+                
+            }
+          
         }
     }
 
@@ -71,7 +84,6 @@ const data_atual=`${ano}-${mes}-${dia}`
             setTextoErro('Sua senha deve conter apenas 8 caracteres')
         }
         else {
-            console.log(alunoDados);
             
             try {
                 const res = await fetch(`${BASE_URL}v1/sinalibras/aluno`, {
@@ -81,15 +93,16 @@ const data_atual=`${ano}-${mes}-${dia}`
                     },
                     body: JSON.stringify(alunoDados),
                 });
-                console.log(res);            
 
                 if (!res.ok) {
                     
             setErroNull(false)
             setTextoErro('Ocorreu um erro, favor, verifique se preencheu tudo corretamente')
                 }
+                else{
+                    alert('Cadastro realizado c sucesso(linha 92)')
+                }
 
-                const result = await res.json();
             } catch (error) {
                 console.error('Erro na requisição:', error);
             }
@@ -97,6 +110,7 @@ const data_atual=`${ano}-${mes}-${dia}`
     }
 
     return (
+
         <div className={reset}>
             <div className={styles.body}>
                 <div className={styles.esquerda}>

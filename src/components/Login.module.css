@@ -18,32 +18,23 @@
     margin-bottom: 50px;
 
 }
-
-.container {
-    display: flex;
-    justify-content: center;
-    width: fill;
-    gap: 30px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 60px;
-    background-color: rgba(113, 105, 228, 0.144);
-    border-radius: 10px;
-    border: solid rgb(39, 101, 155);
-}
-
-.texto {
+.texto_grande{
+    font-size: xx-large;
     color: #345ADE;
-    text-align: center;
+    font-weight: bold;
 }
 
-
+.slogan{
+    font-size: 50px;
+    color: #345ADE;
+    font-weight: 600; 
+    margin-top: -30px;
+}
+.nome_aplicacao{
+    font-size: 80px;
+    color: #345ADE;
+    font-weight: bold;
+}
 .direita {
     background-color: #5385B8;
     margin: 50px 0px;
@@ -55,19 +46,21 @@
     align-items: center;
     justify-content: center;
 }
+.texto_acesse{
+    color: aliceblue;
+    font-size: 40px;
+    margin-bottom: 32px;
+}
 
 .formulario {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: fill;
-    margin-bottom: 32px;
-
 }
-
 .input {
-    width: 100%;
-    height: 32px;
+    width: fill;
+    height: 50px;
     border-radius: 32px;
     margin-top: 10px;
     padding: 10px;
@@ -76,9 +69,15 @@
 
 .texto_input {
     color: aliceblue;
-    font-size: medium;
+    font-size: x-large;
 }
+.esqueciASenha{
+    place-self: end;
+    color: aliceblue;
+    margin-bottom: 32px;
+    font-size: large;
 
+}
 .botao {
     background-color: #deeeff;
     color: #3E60AF;
@@ -87,42 +86,10 @@
     font-size: xx-large;
     font-weight: bold;
     border: none;
+    margin-bottom: 25px;
 }
-
-.direita_professor {
-    gap: 32px;
-    padding: 32px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.texto_professor {
+.texto{
     color: aliceblue;
-    font-size: x-large;
-}
-
-.negrito {
-    color: aliceblue;
-    font-size: xx-large;
-    font-weight: bold;
-}
-
-.input_email {
-    width: fill;
-    height: 50px;
-    background-color: transparent;
-    border: none;
-    border-bottom: solid 2px #deeeff;
-    color: #deeeff;
-    font-size: large;
-}
-
-::placeholder {
-    font-size: large;
-    color: #deeeff;
 }
 
 .erro_null {
